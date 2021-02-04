@@ -1,0 +1,580 @@
+:root {
+  --dark: #212336;
+  --lightAlpha: #f4f9f4;
+  --light: #f4f9f4;
+  --accent: #ff4a57;
+  --white: #ffffff;
+  --black: #000000;
+  --darkAlpha: #23263a;
+  --darkAlpha1: #2b2d41;
+  --paddingHorizontal: 10%;
+  --inActive: #888888;
+}
+
+*,
+html {
+  font-family: poppins, "poppins", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+input,
+textarea:focus {
+  outline: none;
+}
+
+.body {
+  width: 100vw;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--darkAlpha);
+  transition: 0.2s;
+}
+
+.body-lg {
+  background: var(--light);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--darkAlpha);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+}
+
+.nav {
+  width: 100%;
+  height: 70px;
+  background: var(--dark);
+  display: flex;
+  padding: 0px var(--paddingHorizontal);
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+}
+
+.nav-lg {
+  background: var(--lightAlpha);
+}
+
+.navLogo {
+  font-size: 30px;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+}
+
+.navLogo div {
+  width: 5px;
+  height: 5px;
+  border-radius: 2.5px;
+  background: var(--accent);
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navLink {
+  color: var(--light);
+  font-size: 12px;
+  text-transform: capitalize;
+  margin-left: 30px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.navLink::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 4px;
+  background: var(--accent);
+  transition: width 0.2s;
+}
+
+.navLink:hover::after {
+  width: 50%;
+  /* transition: width .3s; */
+}
+
+.sticky {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+#theme {
+  width: 30px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+#theme::after {
+  width: 0px;
+}
+
+.intro {
+  width: 100%;
+  padding: 30px var(--paddingHorizontal);
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 70px 0px;
+  margin-top: 140px;
+}
+
+.introHeading div {
+  border-right: 2px solid var(--accent);
+  width: fit-content;
+  padding-right: 10px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 2s steps(21) 0.2s 1 normal both,
+    blinkTextCursor 500ms steps(50) infinite normal;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 10em;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: var(--accent);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.introHeading {
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--light);
+}
+
+.introDetails {
+  font-size: 15px;
+  color: var(--inActive);
+  width: 45%;
+}
+
+.introButton {
+  height: 40px;
+  width: fit-content;
+  padding: 0px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--light);
+  text-align: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.scrollIndicator {
+  height: 150px;
+  display: flex;
+  width: 20px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.scrollCircle {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  background: var(--darkAlpha);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.scrollCircle-lg {
+  background: var(--light);
+}
+
+.scrollCircle:hover {
+  background: var(--accent);
+}
+
+.active {
+  background: var(--accent);
+}
+
+.scrollLine {
+  position: absolute;
+  height: 150px;
+  width: 0.3px;
+  background: var(--light);
+  z-index: 0;
+}
+
+.scrollLine-lg {
+  background: var(--darkAlpha);
+}
+
+.skills {
+  width: 100%;
+  padding: 0px var(--paddingHorizontal);
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+
+.skillsHeading {
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--light);
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.skillsHeading::after {
+  content: "";
+  height: 5px;
+  max-width: 30%;
+  background: var(--accent);
+  transition: width 0.4s;
+  animation: indicator 0.5s 1 normal;
+}
+
+@keyframes indicator {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 30%;
+  }
+}
+
+.skillsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skillsWrap {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 220px;
+  height: 220px;
+  background: var(--darkAlpha1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  cursor: pointer;
+  padding: 30px 20px;
+}
+
+.cardHeading {
+  font-size: 13px;
+  color: var(--light);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.cardDetails {
+  font-size: 12px;
+  color: var(--light);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.reviews {
+  width: 100%;
+  padding: 0px var(--paddingHorizontal);
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 70px;
+  align-items: flex-start;
+}
+
+.reviewsHeading {
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--light);
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewsHeading::after {
+  content: "";
+  width: 30%;
+  height: 5px;
+  background: var(--accent);
+  transition: width 0.4s;
+  animation: indicator 0.5s 1 normal;
+}
+
+.reviewsContainer {
+  width: 60%;
+  height: fit-content;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.reviewWrap {
+  border-left: 5px solid var(--accent);
+  background: var(--darkAlpha1);
+  margin-bottom: 20px;
+  padding: 30px 30px;
+  padding-left: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.reviewWrap:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.review {
+  font-size: 15px;
+  color: var(--light);
+  font-style: italic;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.quotes {
+  font-size: 40px;
+  color: var(--light);
+}
+
+.rating {
+  display: flex;
+  height: 25px;
+  margin-top: 20px;
+  align-self: flex-end;
+  width: fit-content;
+}
+
+.portfolio {
+  width: 100%;
+  padding: 0px var(--paddingHorizontal);
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 70px;
+  align-items: flex-start;
+}
+
+.portfolioHeading {
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--light);
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolioHeading::after {
+  content: "";
+  width: 30%;
+  height: 5px;
+  background: var(--accent);
+  transition: width 0.4s;
+  animation: indicator 0.5s 1 normal;
+}
+.portfolioContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portfolioWrap {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0px;
+  flex-wrap: wrap;
+}
+
+.portfolioCard {
+  width: 300px;
+  height: 220px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.portfolioCard:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.controls {
+  width: 40px;
+  height: 10px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+}
+
+.controls div {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.portfolioItem {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  align-self: center;
+  justify-self: center;
+  display: flex;
+}
+
+.contact {
+  width: 100%;
+  padding: 0px var(--paddingHorizontal);
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 70px;
+  align-items: flex-start;
+}
+
+.contactHeading {
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--light);
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactHeading::after {
+  content: "";
+  width: 30%;
+  height: 5px;
+  background: var(--accent);
+  transition: width 0.4s;
+  animation: indicator 0.5s 1 normal;
+}
+
+.contactCard {
+  width: 320px;
+  height: fit-content;
+  background: var(--darkAlpha1);
+  margin-top: 70px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactIndicator {
+  width: 50%;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 5px;
+  align-self: center;
+}
+
+.contactText {
+  font-size: 20px;
+  color: var(--light);
+  margin: 30px;
+  font-weight: 500;
+}
+
+.input {
+  width: calc(100% - 60px);
+  height: 50px;
+  margin: 5px 20px;
+  background: var(--darkAlpha);
+  align-self: center;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+  align-content: center;
+  border-radius: 5px;
+}
+
+.input input {
+  background: none;
+  height: 30px;
+  border: none;
+  color: var(--lightAlpha);
+  margin-left: 5px;
+}
+
+.message {
+  width: calc(100% - 60px);
+  height: 100px;
+  margin: 5px 20px;
+  background: var(--darkAlpha);
+  align-self: center;
+  border: none;
+  display: flex;
+  text-align: start;
+  padding: 10px;
+  color: var(--lightAlpha);
+  border-radius: 5px;
+}
+
+.send {
+  width: 80%;
+  height: 40px;
+  margin: 20px 0px;
+  border-radius: 20px;
+  background: var(--accent);
+  color: var(--light);
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
