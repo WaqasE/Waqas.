@@ -1,15 +1,13 @@
 import React from 'react';
-import Traffic from '../assets/traffic.PNG'
 
-function PortfolioCard() {
+function PortfolioCard({ img, title, lang, link }) {
     return (
         <div className="portfolioCard">
-            <div className="controls">
-                <div style={{ backgroundColor: 'red' }} />
-                <div style={{ backgroundColor: 'yellow' }} />
-                <div style={{ backgroundColor: 'green' }} />
+            <div className="absoluteBg" />
+            <div className="shotDetail">
+                <p>{title}</p>
             </div>
-            <img className="portfolioItem" src={Traffic} alt="asset"/>
+            <img className="portfolioItem" src={img} alt="asset" />
         </div>
     );
 }

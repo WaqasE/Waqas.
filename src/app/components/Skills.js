@@ -53,10 +53,10 @@ const cardList = [
     }
 ]
 
-function Skills() {
+function Skills({ref}) {
     const {theme} = useContext(Theme)
     return (
-        <div className="skills">
+        <div  ref={ref} className="skills">
             <p className="skillsHeading" style={{color:theme==='dark'?'':'black'}}>Skill-Set</p>
             <div className="skillsContainer">
                 <div className="skillsWrap">

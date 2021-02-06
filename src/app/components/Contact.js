@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import Theme from '../config/Theme'
 import Textinput from './Textinput';
 
-function Contact() {
+function Contact({ref}) {
     const { theme } = useContext(Theme)
     return (
-        <div className="contact">
+        <div  ref={ref} className="contact">
             <p className="contactHeading" style={{ color: theme === 'dark' ? '' : 'black' }}>Contact Me</p>
             <div style={{ backgroundColor: theme === 'dark' ? '' : 'white' }} className="contactCard">
                 <div className="contactIndicator" />

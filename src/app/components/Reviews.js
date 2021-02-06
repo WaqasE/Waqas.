@@ -30,10 +30,10 @@ const reviews = [
 ]
 
 
-function Reviews() {
+function Reviews({ref}) {
     const { theme } = useContext(Theme)
     return (
-        <div className="reviews">
+        <div  ref={ref} className="reviews">
             <p className="reviewsHeading" style={{ color: theme === 'dark' ? '' : 'black' }}>Reviews</p>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div className="reviewsContainer">
