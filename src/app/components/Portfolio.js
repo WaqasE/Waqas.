@@ -14,7 +14,7 @@ const projects = [
     {
         id: 1,
         img: Panda,
-        title: 'Panda',
+        title: 'Ecommerce Site',
         lang: 'Fern',
         link: ''
     },
@@ -28,14 +28,14 @@ const projects = [
     {
         id: 3,
         img: Admin,
-        title: 'Admin Portal',
+        title: 'Project Magement',
         lang: 'React',
         link: ''
     },
     {
         id: 4,
         img: Login,
-        title: 'Login Form',
+        title: 'The kitchen Webapp',
         lang: 'React',
         link: ''
     },

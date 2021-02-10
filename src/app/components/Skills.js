@@ -67,7 +67,6 @@ function Skills({ref}) {
                             ))
                     }
                 </div>
-                <ScrollIndicator />
             </div>
         </div>
     );

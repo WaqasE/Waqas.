@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import Theme from '../config/Theme'
 import Rating from './Rating';
 import ScrollIndicator from './ScrollIndicator';
+import Review from '../assets/reviews1.svg'
+import LightReview from '../assets/reviews.svg'
 
 const reviews = [
     {
@@ -46,7 +48,7 @@ function Reviews({ref}) {
                                 </div>
                             ))}
                 </div>
-                <ScrollIndicator />
+                <img src={theme === 'dark'?Review:LightReview} alt="dev" />
             </div>
         </div>
     );

@@ -139,7 +139,7 @@ textarea:focus {
   align-items: center;
   justify-content: space-between;
   margin: 70px 0px;
-  margin-top: 140px;
+  margin-top: 80px;
 }
 
 .introHeading div {
@@ -179,7 +179,7 @@ textarea:focus {
 .introDetails {
   font-size: 15px;
   color: var(--inActive);
-  width: 45%;
+  width: 50%;
 }
 
 .introButton {
@@ -349,7 +349,7 @@ textarea:focus {
 }
 
 .reviewsContainer {
-  width: 60%;
+  width: 90%;
   height: fit-content;
   margin-top: 70px;
   display: flex;
@@ -365,6 +365,7 @@ textarea:focus {
   padding-left: 50px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  max-width: 100%;
 }
 
 .reviewWrap:hover {
